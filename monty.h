@@ -22,6 +22,7 @@ typedef struct var_s
 
 #define STACK 0
 #define QUEUE 1
+#define _POSIX_C_SOURCE 200809L
 
 /* global struct to hold flag for queue and stack length */
 extern var_t var;
