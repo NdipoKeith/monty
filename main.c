@@ -1,9 +1,7 @@
-#include <stdio.h>
 #include "monty.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+#include <stdio.h>
 
+bus_t bus = {NULL, NULL, NULL, 0};
 /**
  * main - monty code interpreter
  * @argc: number of arguments
@@ -18,8 +16,6 @@ int main(int argc, char *argv[])
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
-	bus_t bus = {NULL, NULL, NULL, 0};
-
 
 	if (argc != 2)
 	{
@@ -33,13 +29,10 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (1)
+	while (read_line > 0)
 	{
-        content = NULL;
-        if (fgets(content, size, file) == NULL)
-	{
-            break;
-        }
+		content = NULL;
+		read_line = getline(&content, &size, file);
 		bus.content = content;
 		counter++;
 		if (read_line > 0)
@@ -50,13 +43,5 @@ int main(int argc, char *argv[])
 	}
 	free_stack(stack);
 	fclose(file);
-
-
-	if (bus.content != NULL)
-	{
-
-	}
-
 	return (0);
 }
-
