@@ -5,7 +5,11 @@
  * @head: stack head
  * @counter: line_number
  * Return: no return
+<<<<<<< HEAD
+*/
+=======
  */
+>>>>>>> 80e6090ed6451cde561dc0cdde22b25de782d1d6
 void f_mod(stack_t **head, unsigned int counter)
 {
 	stack_t *h;

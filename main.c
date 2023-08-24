@@ -1,13 +1,18 @@
 #include "monty.h"
+<<<<<<< HEAD
 #include <stdio.h>
 
 bus_t bus = {NULL, NULL, NULL, 0};
+=======
+bus_t bus = {NULL, NULL, NULL, 0};
+ssize_t getline(char**lineptr,size_t*n,FILE*stream);
+>>>>>>> a23ce270f520dd53376b3fe3ea0e44de09cb5539
 /**
- * main - monty code interpreter
- * @argc: number of arguments
- * @argv: monty file location
- * Return: 0 on success
- */
+* main - monty code interpreter
+* @argc: number of arguments
+* @argv: monty file location
+* Return: 0 on success
+*/
 int main(int argc, char *argv[])
 {
 	char *content;
@@ -43,5 +48,9 @@ int main(int argc, char *argv[])
 	}
 	free_stack(stack);
 	fclose(file);
+<<<<<<< HEAD
 	return (0);
+=======
+return (0);
+>>>>>>> a23ce270f520dd53376b3fe3ea0e44de09cb5539
 }
